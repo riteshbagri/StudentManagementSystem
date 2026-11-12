@@ -1,0 +1,180 @@
+{
+  "info": {
+    "name": "Student Management System API",
+    "_postman_id": "sms-collection-v1",
+    "description": "Complete Postman collection for Student Management REST API.\nBase URL: http://localhost:8080\n\nAll 6 endpoints are included with sample request bodies.\nImport this file into Postman: File → Import → Upload Files",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Add a New Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul Sharma\",\n  \"email\": \"rahul@example.com\",\n  \"course\": \"B.Tech CSE\",\n  \"age\": 21\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        },
+        "description": "POST /api/students — Creates a new student record.\nExpected Response: 201 Created with the student JSON (including generated id)."
+      },
+      "response": []
+    },
+    {
+      "name": "2. Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        },
+        "description": "GET /api/students — Retrieves all student records.\nExpected Response: 200 OK with a JSON array of all students."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get Student by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        },
+        "description": "GET /api/students/{id} — Retrieves a single student by ID.\nChange '1' to the actual student ID.\nExpected Response: 200 OK or 404 Not Found."
+      },
+      "response": []
+    },
+    {
+      "name": "4. Update Student by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul Sharma\",\n  \"email\": \"rahul.updated@example.com\",\n  \"course\": \"M.Tech CSE\",\n  \"age\": 23\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        },
+        "description": "PUT /api/students/{id} — Updates all fields of a student.\nChange '1' to the actual student ID.\nExpected Response: 200 OK with updated student JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "5. Delete Student by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        },
+        "description": "DELETE /api/students/{id} — Deletes a student record.\nChange '1' to the actual student ID.\nExpected Response: 204 No Content."
+      },
+      "response": []
+    },
+    {
+      "name": "6. Get Students by Course",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/course/B.Tech CSE",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "course", "B.Tech CSE"]
+        },
+        "description": "GET /api/students/course/{course} — Retrieves all students in a course.\nChange 'B.Tech CSE' to any course name.\nExpected Response: 200 OK with a JSON array."
+      },
+      "response": []
+    },
+    {
+      "name": "EXTRA: Add Second Student (for testing)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Priya Verma\",\n  \"email\": \"priya@example.com\",\n  \"course\": \"BCA\",\n  \"age\": 20\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        },
+        "description": "Adds a second student for broader testing."
+      },
+      "response": []
+    },
+    {
+      "name": "EXTRA: Validation Test (Missing Name - Expects 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\",\n  \"email\": \"test@example.com\",\n  \"course\": \"B.Tech\",\n  \"age\": 20\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        },
+        "description": "Demonstrates 400 Bad Request when name is blank."
+      },
+      "response": []
+    },
+    {
+      "name": "EXTRA: Not Found Test (Expects 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/9999",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "9999"]
+        },
+        "description": "Demonstrates 404 Not Found for a non-existent student ID."
+      },
+      "response": []
+    }
+  ]
+}
+
