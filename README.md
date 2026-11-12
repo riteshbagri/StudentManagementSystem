@@ -23,6 +23,14 @@ College Assignment — Java Spring Boot Development.
 
 ```
 StudentManagementSystem/
+├── screenshots/                                       ← Postman API testing screenshots
+│   ├── README.md                                      ← Screenshot guide & naming convention
+│   ├── 01-POST-add-student.png                        ← (add manually after Postman testing)
+│   ├── 02-GET-all-students.png
+│   ├── 03-GET-student-by-id.png
+│   ├── 04-PUT-update-student.png
+│   ├── 05-DELETE-student.png
+│   └── 06-GET-students-by-course.png
 ├── src/
 │   ├── main/
 │   │   ├── java/com/studentmanagement/
@@ -348,6 +356,39 @@ git push -u origin main
 > - Correct credentials set via environment variables
 >
 > The unit tests (service layer + controller layer) run successfully without MySQL using H2 in-memory database.
+
+---
+
+---
+
+## API Testing Screenshots
+
+The `screenshots/` folder contains Postman evidence for all six REST API endpoints.
+Add your own screenshots after testing with Postman (see [`screenshots/README.md`](screenshots/README.md) for the naming guide).
+
+| # | Screenshot File | Endpoint | Expected Status |
+|---|-----------------|----------|-----------------|
+| 1 | [`01-POST-add-student.png`](screenshots/01-POST-add-student.png) | `POST /api/students` | `201 Created` |
+| 2 | [`02-GET-all-students.png`](screenshots/02-GET-all-students.png) | `GET /api/students` | `200 OK` |
+| 3 | [`03-GET-student-by-id.png`](screenshots/03-GET-student-by-id.png) | `GET /api/students/{id}` | `200 OK` |
+| 4 | [`04-PUT-update-student.png`](screenshots/04-PUT-update-student.png) | `PUT /api/students/{id}` | `200 OK` |
+| 5 | [`05-DELETE-student.png`](screenshots/05-DELETE-student.png) | `DELETE /api/students/{id}` | `204 No Content` |
+| 6 | [`06-GET-students-by-course.png`](screenshots/06-GET-students-by-course.png) | `GET /api/students/course/{course}` | `200 OK` |
+
+> **College Submission Tip:** Each screenshot should show the full Postman window with the
+> request URL, HTTP method, request body (for POST/PUT), the HTTP status code, and the JSON response body.
+
+---
+
+## Postman Collection
+
+The importable Postman collection is included at the project root:
+
+```
+StudentManagementSystem.postman_collection.json
+```
+
+**To import:** Open Postman → **Import** → select the file above.
 
 ---
 

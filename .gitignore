@@ -1,10 +1,10 @@
-# Compiled class files
+# ============================================================
+# Student Management System — .gitignore
+# ============================================================
+
+# ─── Compiled & Build Output ─────────────────────────────────
 *.class
-
-# Log files
-*.log
-
-# Package files
+target/
 *.jar
 *.war
 *.nar
@@ -13,8 +13,11 @@
 *.tar.gz
 *.rar
 
-# Maven
-target/
+# ─── Maven Wrapper (JAR is auto-downloaded; don't commit it) ─
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ─── Maven release / versioning artifacts ────────────────────
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -22,35 +25,60 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
 
-# IntelliJ IDEA
+# ─── Logs ────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Sensitive Credentials — NEVER COMMIT ────────────────────
+.env
+*.env
+.env.local
+.env.*.local
+secrets.properties
+credentials.properties
+
+# ─── IntelliJ IDEA ───────────────────────────────────────────
 .idea/
 *.iws
 *.iml
 *.ipr
+out/
 
-# Eclipse
+# ─── Eclipse / Spring Tool Suite ─────────────────────────────
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
 
-# VS Code
+# ─── VS Code ─────────────────────────────────────────────────
 .vscode/
 
-# OS
-.DS_Store
-Thumbs.db
+# ─── NetBeans ────────────────────────────────────────────────
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
 
-# Spring Boot
+# ─── OS-generated files ──────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Spring Boot generated ───────────────────────────────────
 HELP.md
 
-# Environment variables — NEVER commit credentials
-.env
-*.env
+# ─── Node / npm (if any tooling is added later) ──────────────
+node_modules/
 
+# ─── NOTE: screenshots/ folder IS tracked intentionally ──────
+# Do NOT add screenshots/ here — Postman screenshots are
+# required evidence for the college submission.
