@@ -38,3 +38,4 @@ of the Student Management System.
 > **Note:** Add screenshots to this folder before final GitHub submission.
 > Screenshots are gitignored by default only if named `*.png` patterns —
 > they are intentionally tracked here for college submission evidence.
+
