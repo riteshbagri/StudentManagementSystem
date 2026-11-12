@@ -25,12 +25,12 @@ College Assignment — Java Spring Boot Development.
 StudentManagementSystem/
 ├── screenshots/                                       ← Postman API testing screenshots
 │   ├── README.md                                      ← Screenshot guide & naming convention
-│   ├── 01-POST-add-student.png                        ← (add manually after Postman testing)
-│   ├── 02-GET-all-students.png
-│   ├── 03-GET-student-by-id.png
-│   ├── 04-PUT-update-student.png
-│   ├── 05-DELETE-student.png
-│   └── 06-GET-students-by-course.png
+│   ├── 01_POST_Add_Student.png
+│   ├── 02_GET_All_Students.png
+│   ├── 03_PUT_Update_Student.png
+│   ├── 04_GET_Student_By_ID.png
+│   ├── 05_GET_Students_By_Course.png
+│   └── 06_DELETE_Student.png
 ├── src/
 │   ├── main/
 │   │   ├── java/com/studentmanagement/
@@ -359,24 +359,42 @@ git push -u origin main
 
 ---
 
----
-
 ## API Testing Screenshots
 
-The `screenshots/` folder contains Postman evidence for all six REST API endpoints.
-Add your own screenshots after testing with Postman (see [`screenshots/README.md`](screenshots/README.md) for the naming guide).
+All six REST API endpoints were tested using Postman with the application running against the database. The captured screenshots are stored in the [`screenshots/`](screenshots/) directory:
 
-| # | Screenshot File | Endpoint | Expected Status |
-|---|-----------------|----------|-----------------|
-| 1 | [`01-POST-add-student.png`](screenshots/01-POST-add-student.png) | `POST /api/students` | `201 Created` |
-| 2 | [`02-GET-all-students.png`](screenshots/02-GET-all-students.png) | `GET /api/students` | `200 OK` |
-| 3 | [`03-GET-student-by-id.png`](screenshots/03-GET-student-by-id.png) | `GET /api/students/{id}` | `200 OK` |
-| 4 | [`04-PUT-update-student.png`](screenshots/04-PUT-update-student.png) | `PUT /api/students/{id}` | `200 OK` |
-| 5 | [`05-DELETE-student.png`](screenshots/05-DELETE-student.png) | `DELETE /api/students/{id}` | `204 No Content` |
-| 6 | [`06-GET-students-by-course.png`](screenshots/06-GET-students-by-course.png) | `GET /api/students/course/{course}` | `200 OK` |
+| # | Operation | HTTP Method | Endpoint | Expected Status | Screenshot Link |
+|---|-----------|-------------|----------|-----------------|-----------------|
+| 1 | Add Student | `POST` | `/api/students` | `201 Created` | [`01_POST_Add_Student.png`](screenshots/01_POST_Add_Student.png) |
+| 2 | Get All Students | `GET` | `/api/students` | `200 OK` | [`02_GET_All_Students.png`](screenshots/02_GET_All_Students.png) |
+| 3 | Update Student | `PUT` | `/api/students/{id}` | `200 OK` | [`03_PUT_Update_Student.png`](screenshots/03_PUT_Update_Student.png) |
+| 4 | Get Student by ID | `GET` | `/api/students/{id}` | `200 OK` | [`04_GET_Student_By_ID.png`](screenshots/04_GET_Student_By_ID.png) |
+| 5 | Get Students by Course | `GET` | `/api/students/course/{course}` | `200 OK` | [`05_GET_Students_By_Course.png`](screenshots/05_GET_Students_By_Course.png) |
+| 6 | Delete Student | `DELETE` | `/api/students/{id}` | `204 No Content` | [`06_DELETE_Student.png`](screenshots/06_DELETE_Student.png) |
 
-> **College Submission Tip:** Each screenshot should show the full Postman window with the
-> request URL, HTTP method, request body (for POST/PUT), the HTTP status code, and the JSON response body.
+---
+
+### Screenshot Previews
+
+#### 1. Add Student (`POST /api/students`)
+![01_POST_Add_Student](screenshots/01_POST_Add_Student.png)
+
+#### 2. Get All Students (`GET /api/students`)
+![02_GET_All_Students](screenshots/02_GET_All_Students.png)
+
+#### 3. Update Student (`PUT /api/students/{id}`)
+![03_PUT_Update_Student](screenshots/03_PUT_Update_Student.png)
+
+#### 4. Get Student by ID (`GET /api/students/{id}`)
+![04_GET_Student_By_ID](screenshots/04_GET_Student_By_ID.png)
+
+#### 5. Get Students by Course (`GET /api/students/course/{course}`)
+![05_GET_Students_By_Course](screenshots/05_GET_Students_By_Course.png)
+
+#### 6. Delete Student (`DELETE /api/students/{id}`)
+![06_DELETE_Student](screenshots/06_DELETE_Student.png)
+
+> **College Submission Note:** All six screenshots demonstrate successful execution of the required REST API endpoints with status codes, request bodies, and JSON responses matching the assignment specifications.
 
 ---
 
